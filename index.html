@@ -85,7 +85,7 @@
     </section>
 
     <section>
-        <h2>The Candle Bias Oscillator (CBO)</h2>
+        <h2>The Universal Indicator (Candle Bias Oscillator)</h2>
         <p>The core of this strategy is the <strong>CBO indicator</strong>, which gauges market sentiment by analyzing candle structures. The indicator works by assessing the ratio between the upper wick and the lower wick, as well as the ratio between the body and the entire candle. Here's how it works:</p>
         <ul>
             <li><strong>Body Bias:</strong>
@@ -94,7 +94,12 @@
                     <li>If the close is greater than the open, the market is bullish, and the ratio is calculated as (open - close) / (high - low).</li>
                 </ul>
             </li>
-            <li><strong>Wick Bias:</strong> This is determined by comparing the high, low, open, and close of the candle, factoring in whether the high or low exceeds the opening or closing prices.</li>
+            <li><strong>Wick Bias:</strong> This is determined by comparing the upper and lower wicks:
+                <ul>
+                    <li>If the upper wick is longer than the lower wick, the wick bias is calculated as (lower wick length - upper wick length) / (upper wick length + lower wick length), which will give a negative value.</li>
+                    <li>If the lower wick is longer than the upper wick, the wick bias is calculated as (upper wick length - lower wick length) / (upper wick length + lower wick length), which will give a positive value.</li>
+                </ul>
+            </li>
         </ul>
         <p>The average of the body bias and wick bias provides a comprehensive overview of the market's sentiment.</p>
         <p><strong>Why the CBO Indicator Is Best Suited to This Strategy:</strong><br>The CBO indicator is particularly well-suited for this strategy because it can output vastly different ratings depending on the timeframe. This is due to the fact that candles across different timeframes can have very different wick or body biases, making the CBO indicator's ability to adapt to these differences invaluable for accurate market sentiment analysis.</p>
